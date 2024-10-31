@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Quote Generator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="quote-box">
+            <h2>Quote of the Day</h2>
+            <blockquote id="Quote">Loading....</blockquote>
+            <span id="author">Loading...</span>
+            <div>
+                <button onclick="generateQuote()">New Quote</button>
+                <button><img src="twitter-sign.png">tweet</button>
+            </div>
+        </div>
+
+<script>
+   const quotes = [
+            { text: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+            { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+            { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+            { text: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs" },
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "Whether you think you can or you think you can't, you're right.", author: "Henry Ford" }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            document.getElementById('Quote').textContent = `"${randomQuote.text}"`;
+            document.getElementById('author').textContent = `- ${randomQuote.author}`;
+        }
+</script>
+
+    </body>
+
+
+</html>
